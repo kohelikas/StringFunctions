@@ -1,0 +1,34 @@
+///REverse each word in a sentense and keep the position intact
+public string ReverseString(string input)
+		{
+			var result = "";
+			IEnumerable<char> word = "";
+			foreach (var c in input)
+			{
+				if (c == ' ')
+				{
+					word = word.Reverse();
+					foreach (var i in word)
+					{
+						result = result + i.ToString();
+					}
+					result = result + c;
+					word = "";
+				}
+				else {
+					word = word.Append(c);
+					
+				}
+			}
+			if (word.Count() > 0)
+			{
+				word = word.Reverse();
+				foreach (var i in word)
+				{
+					result = result + i.ToString();
+				}
+			}
+		
+			return result;
+			
+		}
